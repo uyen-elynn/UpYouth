@@ -5,7 +5,7 @@
             <h1 class="font-bold text-3xl">{{ props.title }}</h1>
         </div>
         <div>
-            <p class="leading-6">{{ props.content }}</p>
+            <p class="leading-6 lg:h-[72px]">{{ props.content }}</p>
         </div>
     </UCard>
 </template>

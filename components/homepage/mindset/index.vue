@@ -1,59 +1,41 @@
 <template>
-    <UContainer class="bg-color-50">
-        <div class="flex flex-col justify-center items-center gap-8">
+    <div class="bg-color-50 text-center">
+        <div class="justify-center items-center mb-8">
             <CommonBrandText prefix="UpYouth is proud to spread" label="entrepreneurial mindset" color="blue-700"
                 class="text-6xl font-bold text-center">
             </CommonBrandText>
             <p class="mb-8">Read our stories in Vietnamese news, and stay tuned for our global impacts.</p>
         </div>
-        <UContainer class="grid grid-cols-2 gap-2">
-            <div v-for="element in mindSetList" :key="element.id" class="">
-                <div class="relative">
-                    <NuxtImg :src="element.image" alt="gdsc" class="w-full md:max-w-lg" />
-                    <div class="absolute top-0 w-full md:max-w-lg">
-                        <NuxtImg src="/overlay.png" alt="overlay" class="w-full md:max-w-lg"></NuxtImg>
-                    </div>
-                    <div class="absolute bottom-0 flex flex-col left-1/4">
-                        <p class=" font-bold text-white text-xs text-center">
-                            {{ element.title }}
-                        </p>
-                        <p class="text-center">{{ element.content }}</p>
-                    </div>
-                </div>
+        <div class="grid grid-cols-2 gap-8 w-fit mx-auto">
+            <div v-for="item in mindSetList" :key="item.id">
+                <ULink :to="item.url" target="_blank">
+                <NuxtImg :src="item.image" class="max-w-[500px]" /></ULink>
             </div>
-        </UContainer>
-    </UContainer>
+        </div>
+    </div>
 </template>
 
 <script setup lang="ts">
 const mindSetList = ref([
     {
         id: 1,
-        image: '/people.png',
-        name: 'VN Economy',
-        title: 'UpYouth khởi động',
-        content: 'TechYouth Incubator 2024',
+        image: '/VnEconomy.png',
+        url: 'https://vneconomy.vn/upyouth-khoi-dong-techyouth-incubator-2024.htm'
     },
     {
         id: 2,
-        image: '/vnexpress.png',
-        name: 'VnExpress',
-        title: 'Vườn ươm khởi nghiệp công nghệ cho sinh viên Việt',
-        content: '',
+        image: '/VnExpess.png',
+        url: 'https://vnexpress.net/vuon-uom-khoi-nghiep-cong-nghe-cho-sinh-vien-viet-4478515.html'
     },
     {
         id: 3,
-        image: '/dantri.png',
-        name: 'Dân trí',
-        title: 'Gia tốc khởi nghiệp cho sinh viên ngay từ năm nhất: Khát vọng vươn tầm quốc tế  ',
-        content: '',
+        image: '/DanTri.png',
+        url: 'https://dantri.com.vn/giao-duc/gia-toc-khoi-nghiep-cho-sinh-vien-ngay-tu-nam-nhat-khat-vong-vuon-tam-quoc-te-20220627174352460.htm'
     },
     {
         id: 4,
-        image: '/vtv.png',
-        name: 'VTV',
-        title: 'TechYouth Startup Day',
-        content: 'Cơ hội khởi nghiệp cho giới trẻ',
+        image: '/VTV.png',
+        url: 'https://vtv4.vtv.vn/video/ban-tin-tieng-viet/-41430.html'
     }
 ])
 </script>
