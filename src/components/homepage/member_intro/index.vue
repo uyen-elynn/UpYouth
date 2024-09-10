@@ -8,7 +8,7 @@
       <p class="text-xs md:text-base text-center mb-4">Our leadership, members, and alumni work in VCs and startups, just like you. We're young, closely connected, and understand young founders.</p>
     </div>
     <div class="w-screen">
-      <img src="/place.png" class="pr-8"></img>
+      <img src="/place.png" class="max-w-[1200px] mx-auto pr-12 w-full"></img>
     </div>
   </UContainer>
 </template>
