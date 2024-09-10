@@ -72,30 +72,30 @@
 
 <script setup lang="ts">
 const items = [
-  '/sponsors/Advertising Vietnam.png',
-  '/sponsors/Ái Việt Ventures.png',
-  '/sponsors/Airtable.png',
-  '/sponsors/Antler.png',
-  '/sponsors/AWS.png',
-  '/sponsors/Brands Vietnam.png',
-  '/sponsors/Builtfirst.png',
-  '/sponsors/Elsa.png',
-  '/sponsors/Genestory.png',
-  '/sponsors/HubSpot.png',
-  '/sponsors/Indochine Counsel.png'
+  '/sponsors/Advertising Vietnam.svg',
+  '/sponsors/Ái Việt Ventures.svg',
+  '/sponsors/Airtable.svg',
+  '/sponsors/Antler.svg',
+  '/sponsors/AWS.svg',
+  '/sponsors/Brands Vietnam.svg',
+  '/sponsors/Builtfirst.svg',
+  '/sponsors/Elsa.svg',
+  '/sponsors/Genestory.svg',
+  '/sponsors/HubSpot.svg',
+  '/sponsors/Indochine Counsel.svg'
 ]
 
 const items2 = [
-  '/sponsors/infina.png',
-  '/sponsors/mixpanel.png',
-  '/sponsors/Notion.png',
-  '/sponsors/pre.dev.png',
-  '/sponsors/Singapore Global Network.png',
-  '/sponsors/Startup Wheel.png',
-  '/sponsors/Stucolab.png',
-  '/sponsors/The Sentry P.png',
-  '/sponsors/Timo Bank.png',
-  '/sponsors/TopCV.png'
+  '/sponsors/infina.svg',
+  '/sponsors/mixpanel.svg',
+  '/sponsors/Notion.svg',
+  '/sponsors/pre.dev.svg',
+  '/sponsors/Singapore Global Network.svg',
+  '/sponsors/Startup Wheel.svg',
+  '/sponsors/Stucolab.svg',
+  '/sponsors/The Sentry P.svg',
+  '/sponsors/Timo Bank.svg',
+  '/sponsors/TopCV.svg'
 ]
 
 const carouselRef1 = ref()
