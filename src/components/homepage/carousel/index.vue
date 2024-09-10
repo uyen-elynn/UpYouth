@@ -22,7 +22,7 @@
         class="hidden gap-2 overflow-hidden rounded-lg lg:block"
       >
         <div
-          class="flex h-[120px] items-center justify-center rounded-lg border border-gray-300"
+          class="flex h-[140px] items-center justify-center rounded-lg border border-gray-300"
         >
           <img :src="item" draggable="false" class="mx-6 w-[200px]" />
         </div>
@@ -35,7 +35,7 @@
         class="gap-2 overflow-hidden rounded-lg lg:hidden"
       >
         <div
-          class="flex h-[60px] items-center justify-center rounded-lg border border-gray-300"
+          class="flex h-[70px] items-center justify-center rounded-lg border border-gray-300"
         >
           <img :src="item" draggable="false" class="mx-4 w-[100px]" />
         </div>
@@ -45,17 +45,12 @@
         v-slot="{ item }"
         :items="items2"
         :ui="{ item: 'basis-full basis-1/4' }"
-        class="hidden overflow-hidden rounded-lg lg:block"
+        class="mt-2 hidden overflow-hidden rounded-lg lg:block"
       >
         <div
-          class="flex h-[120px] items-center justify-center rounded-lg border border-gray-300"
+          class="flex h-[140px] items-center justify-center rounded-lg border border-gray-300"
         >
-          <img
-            :src="item"
-            draggable="false"
-            width="200"
-            class="mx-6 w-[200px]"
-          />
+          <img :src="item" draggable="false" class="mx-6 w-[200px]" />
         </div>
       </UCarousel>
       <UCarousel
@@ -66,7 +61,7 @@
         class="overflow-hidden rounded-lg lg:hidden"
       >
         <div
-          class="flex h-[60px] items-center justify-center rounded-lg border border-gray-300"
+          class="flex h-[70px] items-center justify-center rounded-lg border border-gray-300"
         >
           <img :src="item" draggable="false" class="mx-4 w-[100px]" />
         </div>
@@ -76,27 +71,31 @@
 </template>
 
 <script setup lang="ts">
-import { useWindowSize } from '@vueuse/core'
-
-const { width } = useWindowSize()
-
 const items = [
-  './layer.png',
-  './layer.png',
-  './layer.png',
-  './layer.png',
-  './layer.png',
-  './layer.png',
-  './layer.png'
+  '/sponsors/Advertising Vietnam.png',
+  '/sponsors/Ái Việt Ventures.png',
+  '/sponsors/Airtable.png',
+  '/sponsors/Antler.png',
+  '/sponsors/AWS.png',
+  '/sponsors/Brands Vietnam.png',
+  '/sponsors/Builtfirst.png',
+  '/sponsors/Elsa.png',
+  '/sponsors/Genestory.png',
+  '/sponsors/HubSpot.png',
+  '/sponsors/Indochine Counsel.png'
 ]
 
 const items2 = [
-  './layer.png',
-  './layer.png',
-  './layer.png',
-  './layer.png',
-  './layer.png',
-  './layer.png'
+  '/sponsors/infina.png',
+  '/sponsors/mixpanel.png',
+  '/sponsors/Notion.png',
+  '/sponsors/pre.dev.png',
+  '/sponsors/Singapore Global Network.png',
+  '/sponsors/Startup Wheel.png',
+  '/sponsors/Stucolab.png',
+  '/sponsors/The Sentry P.png',
+  '/sponsors/Timo Bank.png',
+  '/sponsors/TopCV.png'
 ]
 
 const carouselRef1 = ref()
