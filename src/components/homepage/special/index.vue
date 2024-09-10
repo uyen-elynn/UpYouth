@@ -18,7 +18,7 @@
       </div>
     </UContainer>
     <UContainer
-      class="mx-8 grid auto-rows-max grid-cols-1 gap-4 md:grid-cols-2 md:gap-8"
+      class="mx-8 mx-auto grid auto-rows-max grid-cols-1 gap-4 md:grid-cols-2 md:gap-8"
     >
       <div v-for="special in specialList" :key="special.id">
         <HomepageSpecialItem

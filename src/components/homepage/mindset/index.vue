@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-blue-50 py-4 text-center">
+  <div class="bg-blue-50 py-4 text-center md:py-8">
     <div class="mb-8 items-center justify-center">
       <CommonBrandText
         prefix="UpYouth is proud to spread"
@@ -37,12 +37,12 @@ const mindSetList = ref([
   },
   {
     id: 3,
-    image: '/DanTri.png',
+    image: '/dantri.png',
     url: 'https://dantri.com.vn/giao-duc/gia-toc-khoi-nghiep-cho-sinh-vien-ngay-tu-nam-nhat-khat-vong-vuon-tam-quoc-te-20220627174352460.htm'
   },
   {
     id: 4,
-    image: '/VTV.png',
+    image: '/vtv.png',
     url: 'https://vtv4.vtv.vn/video/ban-tin-tieng-viet/-41430.html'
   }
 ])
