@@ -1,34 +1,38 @@
 <template>
-  <div class="my-8 bg-blue-50 py-8 md:my-16 lg:block">
-    <UContainer class="mb-8">
-      <div
-        class="flex flex-col items-center justify-center gap-4 leading-10 md:gap-8"
-      >
+  <div
+    class="bg-primary-700 relative my-8 overflow-hidden py-8 md:my-16 lg:block"
+  >
+    <UContainer class="mb-16">
+      <div class="flex flex-col items-center justify-center gap-2 md:gap-4">
         <div>
           <CommonBrandText
-            prefix="What makes us"
-            label="different?"
+            label="What makes us different?"
             color="blue-700"
             class="text-2xl font-bold md:text-6xl"
+            background
           ></CommonBrandText>
         </div>
-        <p class="text-center text-xs md:text-base">
+        <p class="text-center text-xs text-white md:text-base">
           We strive to become a go-to startup community by youth, for youth.
         </p>
       </div>
     </UContainer>
     <UContainer
-      class="mx-8 mx-auto grid auto-rows-max grid-cols-1 gap-4 md:grid-cols-2 md:gap-8"
+      class="mx-auto grid auto-rows-max grid-cols-1 gap-4 md:grid-cols-2 md:gap-8"
     >
       <div v-for="special in specialList" :key="special.id">
         <HomepageSpecialItem
           :icon="special.icon"
           :title="special.title"
           :content="special.content"
-          class="h-full"
+          class="z-10 h-full"
         ></HomepageSpecialItem>
       </div>
     </UContainer>
+    <img
+      src="/arcs/arc3.png"
+      class="absolute -right-[150px] -top-[80px] w-[384px]"
+    />
   </div>
 </template>
 

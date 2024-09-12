@@ -1,11 +1,12 @@
 <template>
   <UContainer>
-    <div class="flex flex-col items-center justify-center gap-4 md:gap-8">
+    <div class="flex flex-col items-center justify-center gap-2 md:gap-4">
       <CommonBrandText
         prefix="We are backed by"
         label="the best"
         color="blue-700"
         class="text-center text-xl font-bold md:text-6xl"
+        background
       >
       </CommonBrandText>
       <p class="text-center text-xs md:text-base">
@@ -19,7 +20,7 @@
         v-slot="{ item }"
         :items="items"
         :ui="{ item: 'basis-full basis-1/4' }"
-        class="hidden gap-2 overflow-hidden rounded-lg lg:block"
+        class="mt-2 hidden overflow-hidden rounded-lg lg:block"
       >
         <div
           class="flex h-[140px] items-center justify-center rounded-lg border border-gray-300"
@@ -116,7 +117,7 @@ onMounted(() => {
     if (!carouselRef3.value) return
 
     if (carouselRef3.value.page === carouselRef3.value.pages) {
-      return carouselRef1.value.select(0)
+      return carouselRef3.value.select(0)
     }
 
     carouselRef3.value.next()
