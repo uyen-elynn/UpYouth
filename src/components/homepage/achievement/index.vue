@@ -1,8 +1,12 @@
 <template>
-  <div class="mx-auto my-8 max-w-full bg-blue-50 py-8">
+  <div class="bg-primary-700 relative mx-auto mb-8 max-w-full py-8 text-white">
     <UContainer>
-      <div class="flex flex-col items-center justify-center gap-4 md:gap-8">
-        <h1 class="text-xl font-bold md:text-6xl">Our numbers speak</h1>
+      <div class="flex flex-col items-center justify-center gap-2 md:gap-4">
+        <CommonBrandText
+          label="Our numbers speak"
+          background
+          class="text-2xl font-bold md:text-6xl"
+        />
         <p class="mb-4 text-center text-xs md:mb-8 md:text-base">
           UpYouth empowers can-do youth to create real impacts, and we also do
           the same.
@@ -14,19 +18,20 @@
       :ui="{ constrained: 'lg:max-w-7xl md:max-w-md max-w-xs' }"
     >
       <div v-for="achievement in achievementList" :key="achievement.id">
-        <div class="flex flex-col items-center justify-center gap-2">
-          <CommonBrandText
-            :label="achievement.number"
-            color="blue-700"
-            class="text-4xl font-bold md:text-7xl"
-          >
-          </CommonBrandText>
+        <div class="flex flex-col items-center justify-center gap-4">
+          <span class="text-4xl font-bold text-white md:text-7xl">
+            {{ achievement.number }}
+          </span>
           <p class="text-center text-xs md:text-lg">
             {{ achievement.content }}
           </p>
         </div>
       </div>
     </UContainer>
+    <img
+      src="/arcs/arc2.png"
+      class="absolute -top-[200px] right-[70px] w-[384px]"
+    />
   </div>
 </template>
 

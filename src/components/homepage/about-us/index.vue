@@ -7,9 +7,10 @@
           label="Young founders from 0 to 1"
           class="text-2xl font-bold md:text-6xl"
           color="blue-700"
+          background
         ></CommonBrandText>
       </div>
-      <div class="text-xs md:text-base my-4 md:my-10 text-center">
+      <div class="my-4 text-center text-xs md:my-10 md:text-base">
         <p>
           Vietnamese youth often get stuck in ideation stage due to critical
           lack of resources. UpYouth's here to offer the right resources,
@@ -20,24 +21,28 @@
     <UContainer :ui="{ constrained: 'lg:max-w-7xl max-w-xl' }">
       <div v-for="item in aboutUsList" :key="item.id">
         <div
-          class="lg:flex lg:items-center lg:justify-between gap-4 lg:gap-16 lg:text-left text-center"
-          :class="item.id % 2 === 0 ? 'my-8 md:my-16 flex-row' : 'flex-row-reverse'"
+          class="gap-4 text-center lg:flex lg:items-center lg:justify-between lg:gap-16 lg:text-left"
+          :class="
+            item.id % 2 === 0 ? 'my-8 flex-row md:my-16' : 'flex-row-reverse'
+          "
         >
-          <div class="h-full w-full">
-            <img
-              :src="item.img"
+          <div class="h-full w-full flex-1">
+            <HomepageAboutUsCarousel
+              :items="item.images"
               class="h-full w-full rounded-3xl object-contain"
-            ></img>
+            ></HomepageAboutUsCarousel>
           </div>
-          <div class="mt-4 md:mt-16 flex flex-col items-center lg:items-start gap-2 md:gap-4 lg:mt-0 lg:gap-8">
-            <div class="text-lg sm:text-3xl text-2xl leading-8">
+          <div
+            class="mt-4 flex flex-1 flex-col items-center gap-2 md:mt-16 md:gap-4 lg:mt-0 lg:items-start lg:gap-8"
+          >
+            <div class="text-2xl text-lg leading-8 sm:text-3xl">
               <CommonBrandText
                 :label="item.label"
                 class="font-bold"
                 color="blue-700"
               ></CommonBrandText>
             </div>
-            <p class="leading-6 sm:text-base text-xs">{{ item.content }}</p>
+            <p class="text-xs leading-6 sm:text-base">{{ item.content }}</p>
             <ULink :to="item.url" target="_blank">
               <UButton
                 :label="item.link"
@@ -46,7 +51,7 @@
                 variant="solid"
                 size="lg"
                 color="white"
-                class="rounded-full w-fit hidden md:flex"
+                class="hidden w-fit rounded-full md:flex"
               ></UButton>
               <UButton
                 :label="item.link"
@@ -55,7 +60,7 @@
                 variant="solid"
                 size="md"
                 color="white"
-                class="rounded-full w-fit md:hidden"
+                class="w-fit rounded-full md:hidden"
               ></UButton>
             </ULink>
           </div>
@@ -67,45 +72,59 @@
 
 <script setup lang="ts">
 import { useWindowSize } from '@vueuse/core'
-import type { AboutUs } from "~/types/about-us";
-const { width } = useWindowSize()
+import type { AboutUs } from '~/types/about-us'
 
 const aboutUsList = ref<AboutUs[]>([
   {
     id: 1,
-    img: "techincubator.png",
-    label: "TechYouth Incubator",
+    images: [
+      '/projects/techyouth/ty1.JPG',
+      '/projects/techyouth/ty2.JPG',
+      '/projects/techyouth/ty3.JPG',
+      '/projects/techyouth/ty4.JPG'
+    ],
+    label: 'TechYouth Incubator',
     content:
-      "A startup program helping 40+ startups gain over 4500+ users combined and raise money from top VCs like Antler and Iterative, through a package of AWS credits, recruitment support, and close mentorship from 50+ industry leaders and successful founders.",
-    link: "Visit TechYouth Incubator",
-    url: "https://incubator.upyouth.org/"
+      'A startup program helping 40+ startups gain over 4500+ users combined and raise money from top VCs like Antler and Iterative, through a package of AWS credits, recruitment support, and close mentorship from 50+ industry leaders and successful founders.',
+    link: 'Visit TechYouth Incubator',
+    url: 'https://incubator.upyouth.org/'
   },
   {
     id: 2,
-    img: "people.png",
-    label: "Ecosystem community events",
+    images: [
+      '/projects/events/TYSD1.jpg',
+      '/projects/events/TYSD2.jpg',
+      '/projects/events/TYSD3.jpg',
+      '/projects/events/TYSD4.jpg'
+    ],
+    label: 'Ecosystem community events',
     content:
       "Exclusive networking events uniting the startup ecosystem's top minds, with 130+ high-level guests from the US, Singapore, and Vietnam (e.g. Antler, Singapore Global Network, etc.) and 200+ young talents from MBB, Momo, Shopee, etc.",
-    link: "Visit our recap",
+    link: 'Visit our recap',
     url: 'https://www.facebook.com/upyouth.org/'
   },
   {
     id: 3,
-    img: "buildstreet.png",
-    label: "Build Street",
+    images: ['buildstreet.png'],
+    label: 'Build Street',
     content:
-      "A community for all builders (scientists, engineers, artists, film makers,...) with weekly 4-hour co-working sessions to bring ideas from 0 to 1 together.",
-    link: "Visit Build Street",
+      'A community for all builders (scientists, engineers, artists, film makers,...) with weekly 4-hour co-working sessions to bring ideas from 0 to 1 together.',
+    link: 'Visit Build Street',
     url: 'https://www.buildstreet.xyz/'
   },
   {
     id: 4,
-    img: "hackyouth.png",
-    label: "HackYouth",
+    images: [
+      '/projects/hackyouth/HY1.jpg',
+      '/projects/hackyouth/HY2.jpg',
+      '/projects/hackyouth/HY3.jpg',
+      '/projects/hackyouth/HY4.jpg'
+    ],
+    label: 'HackYouth',
     content:
-      "A 2-day hackathon with HackMIT as a technical advisor, offering a 300-million-VND prize for future entrepreneurs to solve real social challenges by Elsa, Timo, VinaCapital Ventures, and more.",
-    link: "Visit HackYouth",
+      'A 2-day hackathon with HackMIT as a technical advisor, offering a 300-million-VND prize for future entrepreneurs to solve real social challenges by Elsa, Timo, VinaCapital Ventures, and more.',
+    link: 'Visit HackYouth',
     url: 'https://www.upyouth.org/hackyouth'
-  },
-]);
+  }
+])
 </script>

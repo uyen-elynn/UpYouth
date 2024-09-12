@@ -1,6 +1,7 @@
 export type BrandText = {
-    prefix?: string;
-    suffix?: string;
-    label: string;
-    color?: string;
-  };
+  prefix?: string
+  suffix?: string
+  label: string
+  color?: string
+  background?: boolean
+}

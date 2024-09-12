@@ -1,14 +1,12 @@
 <template>
-  <div class="bg-blue-50 py-4 text-center md:py-8">
+  <div class="bg-blue-700 py-4 text-center md:py-8">
     <div class="mb-8 items-center justify-center">
-      <CommonBrandText
-        prefix="UpYouth is proud to spread"
-        label="entrepreneurial mindset"
-        color="blue-700"
-        class="text-center text-xl font-bold md:text-6xl"
+      <h1
+        class="text-center text-xl font-bold text-white md:text-6xl md:leading-normal"
       >
-      </CommonBrandText>
-      <p class="mb-4 mt-4 text-xs md:mb-8 md:text-base">
+        UpYouth is proud to spread entrepreneurial mindset
+      </h1>
+      <p class="mb-4 mt-4 text-xs text-white md:mb-8 md:text-base">
         Read our stories in Vietnamese news, and stay tuned for our global
         impacts.
       </p>
