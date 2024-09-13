@@ -28,10 +28,7 @@
         </div>
       </div>
     </UContainer>
-    <img
-      src="/arcs/arc2.png"
-      class="absolute -top-[200px] right-[70px] w-[384px]"
-    />
+   
   </div>
 </template>
 
@@ -40,7 +37,7 @@ const achievementList = ref([
   {
     id: 1,
     number: '150+',
-    content: 'Ecosystem partners (Investors, C-level founders,...)',
+    content: 'Ecosystem partners',
     url: ''
   },
   {

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="mt-16 w-full border-t border-gray-200 bg-white py-6 text-gray-500 shadow-md"
+    class="w-full border-t border-gray-200 bg-white py-6 text-gray-500 shadow-md"
   >
     <div class="flex w-full flex-col px-8">
       <div class="flex items-end gap-2">
