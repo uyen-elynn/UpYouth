@@ -2,7 +2,7 @@
   <div class="bg-blue-700 py-4 text-center md:py-8">
     <div class="mb-8 items-center justify-center">
       <h1
-        class="text-center text-xl font-bold text-white md:text-6xl md:leading-normal"
+        class="text-center text-xl font-bold max-w-[800px] mx-auto text-white md:text-6xl md:leading-normal"
       >
         UpYouth is proud to spread entrepreneurial mindset
       </h1>

@@ -1,0 +1,74 @@
+<template>
+    <div
+      class="bg-primary-700 relative my-8 overflow-hidden p-8 lg:p-16 lg:my-16"
+    >
+      <UContainer class="mb-8 lg:mb-16">
+        <div class="flex flex-col items-center justify-center gap-2 md:gap-4">
+          <div>
+            <CommonBrandText
+              label="What makes us different?"
+              color="blue-700"
+              class="text-2xl font-bold md:text-6xl"
+              background
+            ></CommonBrandText>
+          </div>
+          <p class="text-center text-xs text-white md:text-base">
+            We strive to become a go-to startup community by youth, for youth.
+          </p>
+        </div>
+      </UContainer>
+      <UContainer
+        class="mx-auto grid auto-rows-max grid-cols-1 gap-4 md:grid-cols-2 md:gap-8"
+      >
+        <div v-for="special in specialList" :key="special.id">
+          <HomepageSpecialItem
+            :icon="special.icon"
+            :title="special.title"
+            :content="special.content"
+            class="z-10 h-full"
+          ></HomepageSpecialItem>
+        </div>
+      </UContainer>
+      <img
+        src="/arcs/arc1.png"
+        class="absolute -left-[150px] lg:-left-[300px] z-10 rotate-[150] top-[35px] lg:-top-[70px] w-[190px] lg:w-[384px]"
+      />
+      <img
+        src="/arcs/arc1.png"
+        class="absolute -right-[150px] lg:-right-[300px] z-10 rotate-[150] bottom-[35px] lg:-bottom-[70px] w-[190px] lg:w-[384px]"
+      />
+    </div>
+  </template>
+  
+  <script setup lang="ts">
+  const specialList = ref([
+    {
+      id: 1,
+      icon: 'i-heroicons-signal',
+      title: 'Elite network',
+      content:
+        'UpYouth is backed by 70+ experienced founders, top VCs, C-level executives from Homebase, Genesia Ventures, Base.vn,... to help deliver hands-on support to young technopreneurs.'
+    },
+    {
+      id: 2,
+      icon: 'i-heroicons-globe-alt',
+      title: 'Like-minded community',
+      content:
+        'UpYouth puts community at the heart of everything we do, from peer-sharing sessions, offline meetups, to online coding weekends.'
+    },
+    {
+      id: 3,
+      icon: 'i-heroicons-light-bulb',
+      title: 'Access to talents',
+      content:
+        'UpYouth grows a strong network of young talents from top firms like Ericsson, McKinsey, and top global universities like NUS, UPenn, all committed to supporting startup growth.'
+    },
+    {
+      id: 4,
+      icon: 'i-heroicons-academic-cap',
+      title: 'Founder-centric mindset',
+      content:
+        "At UpYouth, founders back founders. We move fast, fail fast, learn fast like a startup to best understand and solve young founders' biggest painpoints."
+    }
+  ])
+  </script>

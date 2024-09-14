@@ -35,7 +35,7 @@
           <div
             class="mt-4 flex flex-1 flex-col items-center gap-2 md:mt-16 md:gap-4 lg:mt-0 lg:items-start lg:gap-8"
           >
-            <div class="text-2xl text-lg leading-8 sm:text-3xl">
+            <div class="lg:text-2xl text-lg leading-8 sm:text-3xl">
               <CommonBrandText
                 :label="item.label"
                 class="font-bold"
