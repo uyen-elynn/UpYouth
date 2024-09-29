@@ -1,4 +1,5 @@
 export type AdvisorItem = {
+  url: string
   avatar: string
   name: string
   position: string

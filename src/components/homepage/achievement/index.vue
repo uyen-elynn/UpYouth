@@ -1,5 +1,7 @@
 <template>
-  <div class="bg-primary-700 relative mx-auto mb-8 max-w-full py-8 text-white">
+  <div
+    class="bg-primary-700 relative mx-4 mb-8 max-w-full rounded-3xl pt-8 text-white md:mx-8"
+  >
     <UContainer>
       <div class="flex flex-col items-center justify-center gap-2 md:gap-4">
         <CommonBrandText
@@ -14,46 +16,56 @@
       </div>
     </UContainer>
     <UContainer
-      class="grid grid-cols-2 gap-x-8 gap-y-4 md:gap-x-32 lg:grid-cols-4"
+      class="flex flex-col items-center justify-between overflow-hidden rounded-3xl pb-8 lg:flex-row lg:pb-16"
       :ui="{ constrained: 'lg:max-w-7xl md:max-w-md max-w-xs' }"
     >
       <div v-for="achievement in achievementList" :key="achievement.id">
-        <div class="flex flex-col items-center justify-center gap-4">
-          <span class="text-4xl font-bold text-white md:text-7xl">
-            {{ achievement.number }}
-          </span>
-          <p class="text-center text-xs md:text-lg">
-            {{ achievement.content }}
-          </p>
-        </div>
+        <HomepageAchievementItem
+          :number="achievement.number"
+          :content="achievement.content"
+          :is-active="achievement.id === activeItemId"
+          class="hidden lg:flex"
+        />
+        <HomepageAchievementMobileItem
+          :number="achievement.number"
+          :content="achievement.content"
+          :is-active="achievement.id === activeItemId"
+          class="lg:hidden"
+        />
       </div>
     </UContainer>
-   
   </div>
 </template>
 
 <script setup lang="ts">
 const achievementList = ref([
   {
-    id: 1,
+    id: 0,
     number: '150+',
-    content: 'Ecosystem partners',
-    url: ''
+    content: 'Ecosystem partners'
   },
   {
-    id: 2,
+    id: 1,
     number: '$4.5M+',
     content: 'Raised combined'
   },
   {
-    id: 3,
+    id: 2,
     number: '40+',
     content: 'Startups supported'
   },
   {
-    id: 4,
+    id: 3,
     number: '4,000+',
     content: 'Community members'
   }
 ])
+
+const activeItemId = ref(0)
+
+onMounted(() => {
+  setInterval(() => {
+    activeItemId.value = (activeItemId.value + 1) % 4
+  }, 2500)
+})
 </script>

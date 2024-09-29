@@ -12,10 +12,12 @@ export default defineNuxtConfig({
           'DM Sans': [400, 700]
         }
       }
-    ]
+    ],
+    'vue3-carousel-nuxt'
   ],
   srcDir: 'src',
   colorMode: {
     preference: 'light'
-  }
+  },
+  css: ['/assets/css/variables.css']
 })

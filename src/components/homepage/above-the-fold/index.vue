@@ -1,7 +1,7 @@
 <template>
   <div class="relative w-screen overflow-hidden">
-    <UContainer
-      class="relative -mt-9 lg:-mt-[112px] flex h-screen flex-col justify-center gap-8"
+    <div
+      class="relative mx-8 -mt-9 flex h-screen flex-col justify-center gap-8 lg:-mt-[112px]"
     >
       <div class="flex flex-col items-start gap-8 lg:flex-row lg:items-center">
         <div class="flex-1">
@@ -10,6 +10,8 @@
             label="Real founder"
             color="blue-700"
             class="text-4xl font-bold md:text-8xl"
+            background
+            slide
           />
         </div>
         <p class="flex-1 text-lg text-gray-500 md:text-xl">
@@ -28,14 +30,14 @@
           class="rounded-full"
         ></UButton>
       </div>
-    </UContainer>
+    </div>
     <img
       src="/arcs/arc1.png"
-      class="absolute -bottom-[125px] lg:-bottom-[250px] right-0 z-10 w-[190px] lg:w-[384px]"
+      class="absolute -bottom-[125px] right-0 z-10 w-[190px] lg:-bottom-[250px] lg:w-[384px]"
     />
     <img
       src="/arcs/arc2.png"
-      class="absolute -bottom-[100px] lg:-bottom-[250px] -rotate-90  right-[65px] lg:right-[130px] w-[190px] lg:w-[384px]"
+      class="absolute -bottom-[100px] right-[65px] w-[190px] -rotate-90 lg:-bottom-[250px] lg:right-[130px] lg:w-[384px]"
     />
   </div>
 </template>

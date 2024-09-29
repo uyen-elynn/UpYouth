@@ -8,6 +8,7 @@
           class="text-2xl font-bold md:text-6xl"
           color="blue-700"
           background
+          slide
         ></CommonBrandText>
       </div>
       <div class="my-4 text-center text-xs md:my-10 md:text-base">
@@ -35,7 +36,7 @@
           <div
             class="mt-4 flex flex-1 flex-col items-center gap-2 md:mt-16 md:gap-4 lg:mt-0 lg:items-start lg:gap-8"
           >
-            <div class="lg:text-2xl text-lg leading-8 sm:text-3xl">
+            <div class="text-lg leading-8 sm:text-3xl lg:text-2xl">
               <CommonBrandText
                 :label="item.label"
                 class="font-bold"

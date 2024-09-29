@@ -1,7 +1,9 @@
 <template>
-  <div class="bg-primary-700 relative overflow-hidden pb-16 pt-8">
+  <div
+    class="bg-primary-700 relative mx-4 overflow-hidden rounded-3xl pb-16 pt-8"
+  >
     <UContainer>
-      <div class="flex flex-col items-center justify-center  gap-2 md:gap-4">
+      <div class="flex flex-col items-center justify-center gap-2 md:gap-4">
         <CommonBrandText
           label="Our Advisors"
           color="blue-700"
@@ -9,7 +11,7 @@
           background
         >
         </CommonBrandText>
-        <p class="mb-8 text-xs text-center text-white md:text-base">
+        <p class="mb-8 text-center text-xs text-white md:text-base">
           UpYouth is closely supported by high-level advisors, serial
           entrepreneurs, and seasoned investors.
         </p>
@@ -30,6 +32,7 @@
           indicators
         >
           <HomepageAdvisorsItem
+            :url="item.url"
             :avatar="item.avatar"
             :name="item.name"
             :office="item.office"
@@ -39,13 +42,13 @@
       </div>
     </UContainer>
     <img
-        src="/arcs/arc1.png"
-        class="absolute -left-[150px] lg:-left-[300px] z-10 rotate-[150] top-[35px] lg:-top-[70px] w-[190px] lg:w-[384px]"
-      />
-      <img
-        src="/arcs/arc1.png"
-        class="absolute -right-[150px] lg:-right-[300px] z-10 rotate-[150] bottom-[35px] lg:-bottom-[70px] w-[190px] lg:w-[384px]"
-      />
+      src="/arcs/arc1.png"
+      class="absolute -left-[150px] top-[35px] z-10 w-[190px] rotate-[150] lg:-left-[300px] lg:-top-[70px] lg:w-[384px]"
+    />
+    <img
+      src="/arcs/arc1.png"
+      class="absolute -right-[150px] bottom-[35px] z-10 w-[190px] rotate-[150] lg:-bottom-[70px] lg:-right-[300px] lg:w-[384px]"
+    />
   </div>
 </template>
 
@@ -54,6 +57,7 @@ import type { AdvisorItem } from '~/types/advisors'
 
 const items = ref<AdvisorItem[]>([
   {
+    url: 'https://www.linkedin.com/in/brianminhtran/',
     name: 'Brian Minh Tran',
     avatar: './advisor1.png',
     position: 'Co-founder',
@@ -63,6 +67,7 @@ const items = ref<AdvisorItem[]>([
     }
   },
   {
+    url: 'https://www.linkedin.com/in/nam-doan-705102158/',
     name: 'Nam Doan',
     avatar: './advisor4.png',
     position: 'Co-founder',
@@ -70,9 +75,9 @@ const items = ref<AdvisorItem[]>([
       name: '@ThinkZone Venture',
       position: 'Chief Strategy Officer'
     }
-  }
-  ,
+  },
   {
+    url: 'https://www.linkedin.com/in/thienhuongtran/',
     name: 'Huong Tran',
     avatar: './advisor2.png',
     position: 'Board Advisor',
@@ -82,6 +87,7 @@ const items = ref<AdvisorItem[]>([
     }
   },
   {
+    url: 'https://www.linkedin.com/in/dr-cuong-nguyen-huu-miro-24844583/',
     name: 'Nguyen Huu Cuong',
     avatar: './advisor3.png',
     position: 'Board Advisor',
@@ -90,9 +96,10 @@ const items = ref<AdvisorItem[]>([
       position: 'Co-founder - Accelerator Manager'
     }
   },
-  
+
   {
-    name: 'Thao Ha', 
+    url: 'https://www.linkedin.com/in/thaoha57/',
+    name: 'Thao Ha',
     avatar: './advisor5.png',
     position: 'Board Advisor',
     office: {
