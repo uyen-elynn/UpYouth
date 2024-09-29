@@ -7,6 +7,7 @@
         color="blue-700"
         class="text-center text-xl font-bold md:text-6xl"
         background
+        slide
       >
       </CommonBrandText>
       <p class="text-center text-xs md:text-base">
@@ -15,58 +16,40 @@
       </p>
     </div>
     <div class="my-8 flex flex-col gap-8">
-      <UCarousel
-        ref="carouselRef1"
-        v-slot="{ item }"
-        :items="items"
-        :ui="{ item: 'basis-full basis-1/4' }"
-        class="mt-2 hidden overflow-hidden rounded-lg lg:block"
+      <Carousel
+        :items-to-show="2.5"
+        :breakpoints="breakpoints"
+        :autoplay="1500"
       >
-        <div
-          class="flex h-[140px] items-center justify-center rounded-lg border border-gray-300"
-        >
-          <img :src="item" draggable="false" class="mx-6 w-[200px]" />
-        </div>
-      </UCarousel>
-      <UCarousel
-        ref="carouselRef3"
-        v-slot="{ item }"
-        :items="items"
-        :ui="{ item: 'basis-full basis-1/2 sm:basis-1/4' }"
-        class="gap-2 overflow-hidden rounded-lg lg:hidden"
+        <Slide v-for="item in items" :key="item">
+          <div
+            class="flex h-[60px] items-center justify-center rounded-lg border border-gray-300 md:h-[90px] lg:h-[140px]"
+          >
+            <img
+              :src="item"
+              draggable="false"
+              class="mx-6 w-[80px] md:w-[140px] lg:w-[200px]"
+            />
+          </div>
+        </Slide>
+      </Carousel>
+      <Carousel
+        :items-to-show="2.5"
+        :breakpoints="breakpoints"
+        :autoplay="1500"
       >
-        <div
-          class="flex h-[70px] items-center justify-center rounded-lg border border-gray-300"
-        >
-          <img :src="item" draggable="false" class="mx-4 w-[100px]" />
-        </div>
-      </UCarousel>
-      <UCarousel
-        ref="carouselRef2"
-        v-slot="{ item }"
-        :items="items2"
-        :ui="{ item: 'basis-full basis-1/4' }"
-        class="mt-2 hidden overflow-hidden rounded-lg lg:block"
-      >
-        <div
-          class="flex h-[140px] items-center justify-center rounded-lg border border-gray-300"
-        >
-          <img :src="item" draggable="false" class="mx-6 w-[200px]" />
-        </div>
-      </UCarousel>
-      <UCarousel
-        ref="carouselRef4"
-        v-slot="{ item }"
-        :items="items2"
-        :ui="{ item: 'basis-full basis-1/2 sm:basis-1/4' }"
-        class="overflow-hidden rounded-lg lg:hidden"
-      >
-        <div
-          class="flex h-[70px] items-center justify-center rounded-lg border border-gray-300"
-        >
-          <img :src="item" draggable="false" class="mx-4 w-[100px]" />
-        </div>
-      </UCarousel>
+        <Slide v-for="item in items2" :key="item">
+          <div
+            class="flex h-[60px] items-center justify-center rounded-lg border border-gray-300 md:h-[90px] lg:h-[140px]"
+          >
+            <img
+              :src="item"
+              draggable="false"
+              class="mx-6 w-[80px] md:w-[140px] lg:w-[200px]"
+            />
+          </div>
+        </Slide>
+      </Carousel>
     </div>
   </UContainer>
 </template>
@@ -99,46 +82,19 @@ const items2 = [
   '/sponsors/TopCV.svg'
 ]
 
-const carouselRef1 = ref()
-const carouselRef2 = ref()
-const carouselRef3 = ref()
-const carouselRef4 = ref()
-onMounted(() => {
-  setInterval(() => {
-    if (!carouselRef1.value) return
+const settings = ref({
+  itemsToShow: 2.5,
+  snapAlign: 'center'
+})
 
-    if (carouselRef1.value.page === carouselRef1.value.pages) {
-      return carouselRef1.value.select(0)
-    }
-
-    carouselRef1.value.next()
-  }, 2000)
-  setInterval(() => {
-    if (!carouselRef3.value) return
-
-    if (carouselRef3.value.page === carouselRef3.value.pages) {
-      return carouselRef3.value.select(0)
-    }
-
-    carouselRef3.value.next()
-  }, 2000)
-  setInterval(() => {
-    if (!carouselRef2.value) return
-
-    if (carouselRef2.value.page === carouselRef2.value.pages) {
-      return carouselRef2.value.select(0)
-    }
-
-    carouselRef2.value.next()
-  }, 2000)
-  setInterval(() => {
-    if (!carouselRef4.value) return
-
-    if (carouselRef4.value.page === carouselRef4.value.pages) {
-      return carouselRef4.value.select(0)
-    }
-
-    carouselRef4.value.next()
-  }, 2000)
+const breakpoints = ref({
+  700: {
+    itemsToShow: 3.5,
+    snapAlign: 'center'
+  },
+  1024: {
+    itemsToShow: 4,
+    snapAlign: 'center'
+  }
 })
 </script>

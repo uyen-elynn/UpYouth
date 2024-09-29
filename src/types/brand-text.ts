@@ -4,4 +4,5 @@ export type BrandText = {
   label: string
   color?: string
   background?: boolean
+  slide?: boolean
 }
