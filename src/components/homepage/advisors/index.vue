@@ -17,11 +17,11 @@
         </p>
       </div>
       <div>
-        <UCarousel
+        <UCarousel 
           :items="items"
           v-slot="{ item }"
           :ui="{
-            item: 'basis-full md:basis-1/2 lg:basis-1/3',
+            item: 'basis-full md:basis-1/2 lg:basis-1/3 justify-center',
             indicators: {
               active: 'bg-primary-50',
               inactive: 'bg-primary-500',
