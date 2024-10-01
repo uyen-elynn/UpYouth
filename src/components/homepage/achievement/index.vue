@@ -1,5 +1,6 @@
 <template>
   <div
+    id="achievement"
     class="bg-primary-700 relative mx-4 mb-8 max-w-full rounded-3xl pt-8 text-white md:mx-8"
   >
     <UContainer>
@@ -16,7 +17,7 @@
       </div>
     </UContainer>
     <UContainer
-      class="flex flex-col items-center justify-between overflow-hidden rounded-3xl pb-8 lg:flex-row lg:pb-16"
+      class="flex flex-col items-center justify-between gap-8 overflow-hidden rounded-3xl pb-8 lg:flex-row lg:gap-0 lg:pb-16"
       :ui="{ constrained: 'lg:max-w-7xl md:max-w-md max-w-xs' }"
     >
       <div v-for="achievement in achievementList" :key="achievement.id">

@@ -1,12 +1,14 @@
 <template>
-  <UCarousel
-    :items="items"
+  <Carousel
     class="h-[250px] w-fit overflow-hidden rounded-3xl"
-    indicators
-    v-slot="{ item }"
+    :items-to-show="1"
+    :wrap-around="true"
+    :autoplay="1500"
   >
-    <img :src="item" class="h-full w-[500px]" draggable="false" />
-  </UCarousel>
+    <Slide v-for="item in items" :key="item">
+      <img :src="item" class="h-full w-[500px]" draggable="false" />
+    </Slide>
+  </Carousel>
 </template>
 
 <script setup lang="ts">

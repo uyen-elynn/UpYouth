@@ -8,7 +8,7 @@
           <CommonBrandText
             label="What makes us different?"
             color="blue-700"
-            class="text-2xl font-bold md:text-6xl"
+            class="text-center text-2xl font-bold md:text-6xl"
             background
           ></CommonBrandText>
         </div>
