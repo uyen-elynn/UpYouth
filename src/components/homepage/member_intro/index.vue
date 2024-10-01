@@ -2,10 +2,10 @@
   <UContainer class="my-8" :ui="{ constrained: 'max-w-screen' }">
     <div class="flex flex-col items-center justify-center gap-4 md:gap-8">
       <div class="font-bold">
-        <p class="text-xl md:text-6xl">One people come form ALL</p>
+        <p class="text-center text-xl md:text-6xl">One people come form ALL</p>
         <CommonBrandText
           label="parts of startup ecosystem"
-          class="text-xl md:text-6xl"
+          class="text-center text-xl md:text-6xl"
           color="blue-700"
           background
           slide
@@ -20,16 +20,8 @@
       <HomepageMemberIntroItem
         v-for="item in items"
         :key="item.text"
-        :place="item.place"
+        :places="item.places"
         :text="item.text"
-        class="hidden lg:block"
-      />
-      <HomepageMemberIntroItem
-        v-for="item in mobileItems"
-        :key="item.text"
-        :place="item.place"
-        :text="item.text"
-        class="lg:hidden"
       />
     </div>
   </UContainer>
@@ -39,30 +31,47 @@
 const items = ref([
   {
     text: 'We live in',
-    place: '/welivein.png'
+    places: [
+      '/countries/live/Canada.png',
+      '/countries/live/Czech.png',
+      '/countries/live/Finland.png',
+      '/countries/live/Hungary.png',
+      '/countries/live/Korea.png',
+      '/countries/live/Netherlands.png',
+      '/countries/live/Vietnam.png',
+      '/countries/live/America.png',
+      '/countries/live/Australia.png'
+    ]
   },
   {
     text: 'We study at',
-    place: '/westudyat.png'
+    places: [
+      '/countries/study/FTU.png',
+      '/countries/study/FullBright.png',
+      '/countries/study/NYU.png',
+      '/countries/study/BUV.png',
+      '/countries/study/Cornell.png',
+      '/countries/study/Frame 1263.png',
+      '/countries/study/Frame 1264.png',
+      '/countries/study/Frame 1265.png'
+    ]
   },
   {
     text: 'We work at',
-    place: 'weworkat.png'
-  }
-])
-
-const mobileItems = ref([
-  {
-    text: 'We live in',
-    place: '/welivein.png'
-  },
-  {
-    text: 'We study at',
-    place: '/westudyat.png'
-  },
-  {
-    text: 'We work at',
-    place: 'weworkat2.png'
+    places: [
+      '/countries/work/Ericsson.png',
+      '/countries/work/Frame 1266.png',
+      '/countries/work/Genesia Ventures.png',
+      '/countries/work/GIMO.png',
+      '/countries/work/Masan.png',
+      '/countries/work/McKinsey.png',
+      '/countries/work/MOMO.png',
+      '/countries/work/Nielsen IQ.png',
+      '/countries/work/Starbucks.png',
+      '/countries/work/Think Zone.png',
+      '/countries/work/BCG.png',
+      '/countries/work/Dentons.png'
+    ]
   }
 ])
 </script>

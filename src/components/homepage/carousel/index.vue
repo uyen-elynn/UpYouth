@@ -20,6 +20,7 @@
         :items-to-show="2.5"
         :breakpoints="breakpoints"
         :autoplay="1500"
+        :wrap-around="true"
       >
         <Slide v-for="item in items" :key="item">
           <div
@@ -37,6 +38,7 @@
         :items-to-show="2.5"
         :breakpoints="breakpoints"
         :autoplay="1500"
+        :wrap-around="true"
       >
         <Slide v-for="item in items2" :key="item">
           <div

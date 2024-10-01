@@ -28,16 +28,31 @@
           size="xl"
           color="white"
           class="rounded-full"
+          @click="discover()"
         ></UButton>
       </div>
     </div>
     <img
       src="/arcs/arc1.png"
-      class="absolute -bottom-[125px] right-0 z-10 w-[190px] lg:-bottom-[250px] lg:w-[384px]"
+      class="absolute -bottom-[105px] right-[70px] z-10 w-[190px] lg:-bottom-[220px] lg:w-[384px]"
     />
     <img
       src="/arcs/arc2.png"
-      class="absolute -bottom-[100px] right-[65px] w-[190px] -rotate-90 lg:-bottom-[250px] lg:right-[130px] lg:w-[384px]"
+      class="absolute -bottom-[100px] right-[145px] w-[190px] -rotate-90 lg:-bottom-[220px] lg:right-[200px] lg:w-[384px]"
     />
   </div>
 </template>
+
+<script setup lang="ts">
+const discover = () => {
+  const element = document.getElementById('achievement')
+  if (element) {
+    const offsetTop = element.getBoundingClientRect().top + window.pageYOffset
+
+    window.scrollTo({
+      top: offsetTop - 100,
+      behavior: 'smooth'
+    })
+  }
+}
+</script>

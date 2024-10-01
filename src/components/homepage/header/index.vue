@@ -1,6 +1,6 @@
 <template>
   <div
-    class="sticky top-0 z-10 flex w-full flex-row items-center justify-between border-b border-gray-300 bg-white/30 px-4 py-6 backdrop-blur-md md:px-8"
+    class="sticky top-0 z-30 flex w-full flex-row items-center justify-between border-b border-gray-300 bg-white/30 px-4 py-6 backdrop-blur-md md:px-8"
   >
     <div class="flex max-w-32 flex-row items-center gap-2">
       <UButton
@@ -29,10 +29,6 @@
 const navigationLinks = [
   {
     label: 'Homepage',
-    to: '/'
-  },
-  {
-    label: 'TechYouth Incubator',
     to: '/'
   }
 ]
