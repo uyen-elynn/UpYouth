@@ -73,7 +73,7 @@ const items = ref<AdvisorItem[]>([
     position: 'Co-founder',
     office: {
       name: '@ThinkZone Venture',
-      position: 'Chief Strategy Officer'
+      position: 'Co-founder - Accelerator Manager'
     }
   },
   {
@@ -93,7 +93,7 @@ const items = ref<AdvisorItem[]>([
     position: 'Board Advisor',
     office: {
       name: '@VinAI',
-      position: 'Co-founder - Accelerator Manager'
+      position: 'Chief Strategy Officer'
     }
   },
 
