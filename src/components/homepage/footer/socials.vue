@@ -2,19 +2,19 @@
 const socialItems = [
   {
     icon: 'i-mdi-facebook',
-    link: 'https://www.facebook.com/gdschanu'
+    link: 'https://www.facebook.com/upyouth.org'
   },
   {
     icon: 'i-mdi-linkedin',
-    link: 'https://www.linkedin.com/company/gdschanu'
+    link: 'https://www.linkedin.com/company/upyouth/'
   },
   {
     icon: 'i-mdi-email-outline',
-    link: 'https://mail.google.com'
+    link: 'mailto:info@upyouth.org'
   },
   {
     icon: 'i-mdi-instagram',
-    link: 'https://www.instagram.com/gdsc.hanu/'
+    link: 'https://www.instagram.com/_upyouth'
   }
 ]
 </script>

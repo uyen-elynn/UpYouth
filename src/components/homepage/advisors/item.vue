@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="url">
+  <nuxt-link :to="url" target="_blank">
     <div class="mx-auto flex flex-col items-center text-center text-white">
       <img
         :src="avatar"
