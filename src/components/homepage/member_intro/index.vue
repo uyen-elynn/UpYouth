@@ -2,7 +2,7 @@
   <UContainer class="my-8" :ui="{ constrained: 'max-w-screen' }">
     <div class="flex flex-col items-center justify-center gap-4 md:gap-8">
       <div class="font-bold">
-        <p class="text-center text-xl md:text-6xl">One people come form ALL</p>
+        <p class="text-center text-xl md:text-6xl">UpYouthians come from ALL</p>
         <CommonBrandText
           label="parts of startup ecosystem"
           class="text-center text-xl md:text-6xl"
