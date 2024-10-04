@@ -88,7 +88,7 @@ const aboutUsList = ref<AboutUs[]>([
     content:
       'A startup program helping 40+ startups gain over 4500+ users combined and raise money from top VCs like Antler and Iterative, through a package of AWS credits, recruitment support, and close mentorship from 50+ industry leaders and successful founders.',
     link: 'Visit TechYouth Incubator',
-    url: 'https://incubator.upyouth.org/'
+    url: 'https://www.facebook.com/upyouth.org/posts/pfbid02jk4vu2thVaGkxpMNQdzMnf3MKEbTznbMmtTvxkj9QSgCmAXw29myrQcPXXV5iv4Nl'
   },
   {
     id: 2,
@@ -102,7 +102,7 @@ const aboutUsList = ref<AboutUs[]>([
     content:
       "Exclusive networking events uniting the startup ecosystem's top minds, with 130+ high-level guests from the US, Singapore, and Vietnam (e.g. Antler, Singapore Global Network, etc.) and 200+ young talents from MBB, Momo, Shopee, etc.",
     link: 'Visit our recap',
-    url: 'https://www.facebook.com/upyouth.org/'
+    url: 'https://www.facebook.com/upyouth.org/posts/pfbid0RacN8D7Umgraz6ruijf6HTh62uBPkr1fA1r5gBp83TsBvHCogCZhURMYZst2cvYql?rdid=XXOOCOYFSu0ToKjN'
   },
   {
     id: 3,
@@ -125,7 +125,7 @@ const aboutUsList = ref<AboutUs[]>([
     content:
       'A 2-day hackathon with HackMIT as a technical advisor, offering a 300-million-VND prize for future entrepreneurs to solve real social challenges by Elsa, Timo, VinaCapital Ventures, and more.',
     link: 'Visit HackYouth',
-    url: 'https://www.upyouth.org/hackyouth'
+    url: 'https://www.facebook.com/upyouth.org/posts/pfbid02T1C1mKJGHdApjynpEJ1bMd7Zpa1cN2UFAXzJJNwV8eunvmU9aF2b9ACJmu6xTHEjl'
   }
 ])
 </script>
