@@ -72,7 +72,7 @@ const items = ref<AdvisorItem[]>([
     avatar: './advisor4.png',
     position: 'Co-founder',
     office: {
-      name: '@ThinkZone Venture',
+      name: '@ThinkZone Ventures',
       position: 'Accelerator Manager'
     }
   },
