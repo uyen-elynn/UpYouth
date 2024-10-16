@@ -15,7 +15,7 @@
           >© Copyright 2024, All Rights Reserved by UpYouth Social
           Company</span
         >
-        <HomepageFooterSocials />
+        <CommonFooterSocials />
       </div>
     </div>
   </div>

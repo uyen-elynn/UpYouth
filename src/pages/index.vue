@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HomepageHeader />
+    <CommonHeader />
     <HomepageAboveTheFold />
     <HomepageAchievement />
     <HomepageAboutUs />
@@ -10,8 +10,8 @@
     <HomepageMemberIntro />
     <HomepageMindset />
     <HomepageContact />
-    <HomepageFooter />
+    <CommonFooter />
   </div>
 </template>
 <script setup lang="ts"></script>
-s
+

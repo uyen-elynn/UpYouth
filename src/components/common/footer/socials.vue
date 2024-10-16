@@ -21,7 +21,7 @@ const socialItems = [
 
 <template>
   <div class="mt-4 flex gap-8 md:mt-0">
-    <HomepageFooterSocialLink
+    <CommonFooterSocialLink
       v-for="item in socialItems"
       :key="item.icon"
       :link="item.link"

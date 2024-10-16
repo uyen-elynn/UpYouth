@@ -16,6 +16,13 @@
       :links="navigationLinks"
       class="hidden justify-end md:flex"
     />
+    <a
+      href="https://tally.so/r/mZzXpo"
+      target="_blank"
+      class="ml-4 hidden md:block px-4 py-2 rounded-full bg-gradient-to-r from-blue-600 to-blue-800 text-white font-semibold shadow-lg hover:from-blue-700 hover:to-blue-900 transition-transform transform hover:scale-105 whitespace-nowrap"
+    >
+      Join us now!
+    </a>
   </div>
   <UVerticalNavigation
     :links="navigationLinks"
@@ -30,6 +37,10 @@ const navigationLinks = [
   {
     label: 'Homepage',
     to: '/'
+  },
+  {
+    label: 'Team',
+    to: '/team'
   }
 ]
 

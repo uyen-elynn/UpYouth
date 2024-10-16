@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div ref="templateRef" :class="{ 'scale-up': isVisible, 'scale-down': !isVisible }">
     <UContainer class="text-center">
       <div class="leading-10">
         <h1 class="text-2xl font-bold md:text-6xl">Our community nurtures</h1>
@@ -23,9 +23,7 @@
       <div v-for="item in aboutUsList" :key="item.id">
         <div
           class="gap-4 text-center lg:flex lg:items-center lg:justify-between lg:gap-16 lg:text-left"
-          :class="
-            item.id % 2 === 0 ? 'my-8 flex-row md:my-16' : 'flex-row-reverse'
-          "
+          :class="item.id % 2 === 0 ? 'my-8 flex-row md:my-16' : 'flex-row-reverse'"
         >
           <div class="h-full w-full flex-1">
             <HomepageAboutUsCarousel
@@ -52,7 +50,7 @@
                 variant="solid"
                 size="lg"
                 color="white"
-                class="hidden w-fit rounded-full md:flex"
+                class="hidden w-fit rounded-full button-fill md:flex"
               ></UButton>
               <UButton
                 :label="item.link"
@@ -61,7 +59,7 @@
                 variant="solid"
                 size="md"
                 color="white"
-                class="w-fit rounded-full md:hidden"
+                class="w-fit rounded-full button-fill md:hidden"
               ></UButton>
             </ULink>
           </div>
@@ -129,3 +127,36 @@ const aboutUsList = ref<AboutUs[]>([
   }
 ])
 </script>
+
+<style scoped>
+.button-fill {
+  position: relative;
+  overflow: hidden;
+  color: black; 
+}
+
+.button-fill::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #1d4ed8; 
+  z-index: 0;
+  transition: all 0.5s ease-out;
+}
+
+.button-fill:hover::before {
+  left: 0;
+}
+
+.button-fill:hover {
+  color: white; 
+}
+
+.button-fill > * {
+  position: relative;
+  z-index: 1;
+}
+</style>

@@ -1,62 +1,48 @@
 <template>
-  <UContainer>
-    <div class="flex flex-col items-center justify-center gap-2 md:gap-4">
-      <CommonBrandText
-        prefix="We are backed by"
-        label="the best"
-        color="blue-700"
-        class="text-center text-xl font-bold md:text-6xl"
-        background
-        slide
-      >
-      </CommonBrandText>
-      <p class="text-center text-xs md:text-base">
-        Our elite partners in startup ecosystems help you build real ventures
-        and grow them far beyond.
-      </p>
-    </div>
-    <div class="my-8 flex flex-col gap-8">
-      <Carousel
-        :items-to-show="2.5"
-        :breakpoints="breakpoints"
-        :autoplay="1500"
-        :wrap-around="true"
-      >
-        <Slide v-for="item in items" :key="item">
-          <div
-            class="flex h-[60px] items-center justify-center rounded-lg border border-gray-300 md:h-[90px] lg:h-[140px]"
-          >
-            <img
-              :src="item"
-              draggable="false"
-              class="mx-6 w-[80px] md:w-[140px] lg:w-[200px]"
-            />
-          </div>
-        </Slide>
-      </Carousel>
-      <Carousel
-        :items-to-show="2.5"
-        :breakpoints="breakpoints"
-        :autoplay="1500"
-        :wrap-around="true"
-      >
-        <Slide v-for="item in items2" :key="item">
-          <div
-            class="flex h-[60px] items-center justify-center rounded-lg border border-gray-300 md:h-[90px] lg:h-[140px]"
-          >
-            <img
-              :src="item"
-              draggable="false"
-              class="mx-6 w-[80px] md:w-[140px] lg:w-[200px]"
-            />
-          </div>
-        </Slide>
-      </Carousel>
-    </div>
-  </UContainer>
+  <div ref="templateRef" :class="{ 'scale-up': isVisible, 'scale-down': !isVisible }">
+    <UContainer>
+      <div class="flex flex-col items-center justify-center gap-2 md:gap-4">
+        <CommonBrandText prefix="We are backed by" label="the best" color="blue-700"
+          class="text-center text-xl font-bold md:text-6xl" background slide>
+        </CommonBrandText>
+        <p class="text-center text-xs md:text-base">
+          Our elite partners in startup ecosystems help you build real ventures
+          and grow them far beyond.
+        </p>
+      </div>
+      <div class="my-8 flex flex-col gap-8">
+        <Carousel :items-to-show="2.5" :breakpoints="breakpoints" :autoplay="1500" :wrap-around="true">
+          <Slide v-for="item in items" :key="item">
+            <div
+              class="flex h-[60px] items-center justify-center rounded-lg border border-gray-300 md:h-[90px] lg:h-[140px]">
+              <img :src="item" draggable="false" class="mx-6 w-[80px] md:w-[140px] lg:w-[200px]" />
+            </div>
+          </Slide>
+        </Carousel>
+        <Carousel :items-to-show="2.5" :breakpoints="breakpoints" :autoplay="1500" :wrap-around="true">
+          <Slide v-for="item in items2" :key="item">
+            <div
+              class="flex h-[60px] items-center justify-center rounded-lg border border-gray-300 md:h-[90px] lg:h-[140px]">
+              <img :src="item" draggable="false" class="mx-6 w-[80px] md:w-[140px] lg:w-[200px]" />
+            </div>
+          </Slide>
+        </Carousel>
+      </div>
+    </UContainer>
+  </div>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
+import { useIntersectionObserver } from '~/assets/TS/useIntersectionObserver';
+
+const templateRef = ref(null);
+const isVisible = ref(false);
+
+useIntersectionObserver(templateRef, (visible) => {
+  isVisible.value = visible;
+});
+
 const items = [
   '/sponsors/Advertising Vietnam.svg',
   '/sponsors/Ái Việt Ventures.svg',
@@ -100,3 +86,15 @@ const breakpoints = ref({
   }
 })
 </script>
+
+<style scoped>
+.scale-up {
+  transform: scale(1);
+  transition: transform 0.4s ease-in-out;
+}
+
+.scale-down {
+  transform: scale(0.95);
+  transition: transform 0.4s ease-in-out;
+}
+</style>

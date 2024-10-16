@@ -19,5 +19,16 @@ export default defineNuxtConfig({
   colorMode: {
     preference: 'light'
   },
-  css: ['/assets/css/variables.css']
-})
+  css: ['/assets/css/variables.css'],
+  app: {
+    head: {
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/png',
+          href: '/brand-icon.png'
+        }
+      ]
+    }
+  }
+});

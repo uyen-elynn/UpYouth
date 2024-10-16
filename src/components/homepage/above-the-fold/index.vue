@@ -1,8 +1,6 @@
 <template>
   <div class="relative w-screen overflow-hidden">
-    <div
-      class="relative mx-8 -mt-9 flex h-screen flex-col justify-center gap-8 lg:-mt-[112px]"
-    >
+    <div class="relative mx-8 -mt-9 flex h-screen flex-col justify-center gap-8 lg:-mt-[112px]">
       <div class="flex flex-col items-start gap-8 lg:flex-row lg:items-center">
         <div class="flex-1">
           <h1 class="text-4xl font-bold md:text-8xl">Do like a</h1>
@@ -27,7 +25,7 @@
           variant="solid"
           size="xl"
           color="white"
-          class="rounded-full"
+          class="rounded-full button-fill transition duration-200"
           @click="discover()"
         ></UButton>
       </div>
@@ -45,14 +43,47 @@
 
 <script setup lang="ts">
 const discover = () => {
-  const element = document.getElementById('achievement')
+  const element = document.getElementById('achievement');
   if (element) {
-    const offsetTop = element.getBoundingClientRect().top + window.pageYOffset
+    const offsetTop = element.getBoundingClientRect().top + window.pageYOffset;
 
     window.scrollTo({
       top: offsetTop - 100,
       behavior: 'smooth'
-    })
+    });
   }
-}
+};
 </script>
+
+<style scoped>
+.button-fill {
+  position: relative;
+  overflow: hidden;
+  color: black; 
+}
+
+.button-fill::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #1d4ed8; 
+  z-index: 0;
+  transition: all 0.5s ease-out;
+}
+
+.button-fill:hover::before {
+  left: 0;
+}
+
+.button-fill:hover {
+  color: white; 
+}
+
+.button-fill > * {
+  position: relative;
+  z-index: 1;
+}
+</style>

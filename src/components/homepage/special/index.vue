@@ -1,48 +1,42 @@
 <template>
-  <div
-    class="bg-primary-700 relative mx-4 my-8 overflow-hidden rounded-3xl p-8 lg:my-16 lg:p-16"
-  >
-    <UContainer class="mb-8 lg:mb-16">
-      <div class="flex flex-col items-center justify-center gap-2 md:gap-4">
-        <div>
-          <CommonBrandText
-            label="What makes us different?"
-            color="blue-700"
-            class="text-center text-2xl font-bold md:text-6xl"
-            background
-          ></CommonBrandText>
+  <div ref="templateRef" :class="{ 'scale-up': isVisible, 'scale-down': !isVisible }">
+    <div class="bg-primary-700 relative mx-4 my-8 overflow-hidden rounded-3xl p-8 lg:my-16 lg:p-16">
+      <UContainer class="mb-8 lg:mb-16">
+        <div class="flex flex-col items-center justify-center gap-2 md:gap-4">
+          <div>
+            <CommonBrandText label="What makes us different?" color="blue-700"
+              class="text-center text-2xl font-bold md:text-6xl" background></CommonBrandText>
+          </div>
+          <p class="text-center text-xs text-white md:text-base">
+            We strive to become a go-to startup community by youth, for youth.
+          </p>
         </div>
-        <p class="text-center text-xs text-white md:text-base">
-          We strive to become a go-to startup community by youth, for youth.
-        </p>
-      </div>
-    </UContainer>
-    <UContainer
-      class="mx-auto grid auto-rows-max grid-cols-1 gap-4 md:grid-cols-2 md:gap-8"
-    >
-      <div v-for="special in specialList" :key="special.id">
-        <HomepageSpecialItem
-          :icon="special.icon"
-          :title="special.title"
-          :prefix="special.prefix"
-          :content="special.content"
-          :suffix="special.suffix"
-          class="z-10 h-full"
-        ></HomepageSpecialItem>
-      </div>
-    </UContainer>
-    <img
-      src="/arcs/arc1.png"
-      class="absolute -left-[150px] top-[35px] z-10 w-[190px] rotate-[150] lg:-left-[300px] lg:-top-[70px] lg:w-[384px]"
-    />
-    <img
-      src="/arcs/arc1.png"
-      class="absolute -right-[150px] bottom-[35px] z-10 w-[190px] rotate-[150] lg:-bottom-[70px] lg:-right-[300px] lg:w-[384px]"
-    />
+      </UContainer>
+      <UContainer class="mx-auto grid auto-rows-max grid-cols-1 gap-4 md:grid-cols-2 md:gap-8">
+        <div v-for="special in specialList" :key="special.id">
+          <HomepageSpecialItem :icon="special.icon" :title="special.title" :prefix="special.prefix"
+            :content="special.content" :suffix="special.suffix" class="z-10 h-full"></HomepageSpecialItem>
+        </div>
+      </UContainer>
+      <img src="/arcs/arc1.png"
+        class="absolute -left-[150px] top-[35px] z-10 w-[190px] rotate-[150] lg:-left-[300px] lg:-top-[70px] lg:w-[384px]" />
+      <img src="/arcs/arc1.png"
+        class="absolute -right-[150px] bottom-[35px] z-10 w-[190px] rotate-[150] lg:-bottom-[70px] lg:-right-[300px] lg:w-[384px]" />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
+import { useIntersectionObserver } from '~/assets/TS/useIntersectionObserver';
+
+const templateRef = ref(null);
+const isVisible = ref(false);
+
+useIntersectionObserver(templateRef, (visible) => {
+  isVisible.value = visible;
+});
+
 const specialList = ref([
   {
     id: 1,
@@ -81,3 +75,15 @@ const specialList = ref([
   }
 ])
 </script>
+
+<style scoped>
+.scale-up {
+  transform: scale(1);
+  transition: transform 0.6s ease-in-out;
+}
+
+.scale-down {
+  transform: scale(0.98);
+  transition: transform 0.6s ease-in-out;
+}
+</style>

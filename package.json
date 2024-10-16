@@ -20,7 +20,7 @@
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.6",
     "typescript": "^5.5.4",
-    "vue": "latest",
+    "vue": "^3.5.12",
     "vue-router": "latest",
     "vue3-carousel-nuxt": "^1.1.3"
   },
