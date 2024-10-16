@@ -33,36 +33,57 @@ import { ref } from 'vue';
 const chairs = ref([
   {
     name: 'Ms. Thanh Hoang',
-    position: 'Growth at Stealth Startup Incoming Consultant at McKinsey',
-    image: '/board-chair1.png'
+    position: 'Chair',
+    image: '/board-chair1.png',
+    office: {
+      name: '@Harvard Business School',
+      position: 'MBA Candidate'
+    }
   },
   {
     name: 'Ms. Thi Le',
-    position: 'Vice Chair Strategy & Development at Masan',
-    image: '/board-chair2.png'
+    position: 'Vice Chair',
+    image: '/board-chair2.png',
+    office: {
+      name: '@Masan Group',
+      position: 'Executive Assistant to Group CEO'
+    }
   },
   {
     name: 'Mr. Vu Tran',
-    position: 'Vice Chair Ex Investment Banking at BDA Partners',
-    image: '/board-chair3.png'
+    position: 'Vice Chair',
+    image: '/board-chair3.png',
+    office: {
+      name: '@BDA Partners',
+      position: 'Ex-Investment Banking Analyst'
+    }
   }
 ]);
 
 const advisors = ref([
   {
     name: 'Dr. Cuong Nguyen (Miro)',
-    position: 'Vintak Global KOL & Partnership Director',
-    image: '/board-advisor1.png'
+    image: '/board-advisor1.png',
+    office: {
+      name: '@VinFast',
+      position: 'Global KOL & Partnership Director'
+    }
   },
   {
     name: 'Ms. Huong Tran',
-    position: 'Monk\'s Hill VenturesVenture Partner',
-    image: '/board-advisor2.png'
+    image: '/board-advisor2.png',
+    office: {
+      name: "@Monk's Hill Ventures",
+      position: 'Ex-Venture Partner'
+    }
   },
   {
     name: 'Ms. Thao Ha',
-    position: 'Integra Partners Venture Partner',
-    image: '/board-advisor3.png'
+    image: '/board-advisor3.png',
+    office: {
+      name: '@Integra Partner',
+      position: 'Venture Partner'
+    }
   }
 ]);
 </script>
