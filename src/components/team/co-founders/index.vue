@@ -20,14 +20,20 @@ import { ref } from 'vue';
 
 const founders = ref([
     {
-        name: 'Mr. Brian Minh Tran',
-        position: 'Forbes 30U30 Asia Founder of the Board of Trustees',
+        name: 'Brian Minh Tran',
         image: '/co-founder1.png'
+        office: {
+            name: '',
+            position: 'Forbes 30U30 Asia'
+        }
     },
     {
-        name: 'Mr. Nam Doan',   
-        position: 'Accelerator Manager, ThinkZone Venture',
+        name: 'Nam Doan',   
         image: '/co-founder2.png'
+        office: {
+          name: '@ThinkZone Ventures',
+          position: 'Accelerator Program Manager'
+        }
     }
 ]);
 </script>
