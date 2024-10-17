@@ -77,14 +77,3 @@ const breakpoints = ref({
 })
 </script>
 
-<style scoped>
-.scale-up {
-  transform: scale(1);
-  transition: transform 0.4s ease-in-out;
-}
-
-.scale-down {
-  transform: scale(0.95);
-  transition: transform 0.4s ease-in-out;
-}
-</style>
