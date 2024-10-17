@@ -1,5 +1,4 @@
 <template>
-  <div ref="templateRef" :class="{ 'scale-up': isVisible, 'scale-down': !isVisible }">
     <UContainer class="text-center">
       <div class="leading-10">
         <h1 class="text-2xl font-bold md:text-6xl">Our community nurtures</h1>
@@ -66,12 +65,12 @@
         </div>
       </div>
     </UContainer>
-  </div>
 </template>
 
+
 <script setup lang="ts">
-import { useWindowSize } from '@vueuse/core'
-import type { AboutUs } from '~/types/about-us'
+import { ref, onMounted } from 'vue';
+import type { AboutUs } from '~/types/about-us';
 
 const aboutUsList = ref<AboutUs[]>([
   {
@@ -125,38 +124,8 @@ const aboutUsList = ref<AboutUs[]>([
     link: 'Visit HackYouth',
     url: 'https://www.facebook.com/upyouth.org/posts/pfbid02T1C1mKJGHdApjynpEJ1bMd7Zpa1cN2UFAXzJJNwV8eunvmU9aF2b9ACJmu6xTHEjl'
   }
-])
+]);
 </script>
 
-<style scoped>
-.button-fill {
-  position: relative;
-  overflow: hidden;
-  color: black; 
-}
 
-.button-fill::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background-color: #1d4ed8; 
-  z-index: 0;
-  transition: all 0.5s ease-out;
-}
 
-.button-fill:hover::before {
-  left: 0;
-}
-
-.button-fill:hover {
-  color: white; 
-}
-
-.button-fill > * {
-  position: relative;
-  z-index: 1;
-}
-</style>

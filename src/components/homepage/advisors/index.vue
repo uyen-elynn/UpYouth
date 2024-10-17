@@ -41,14 +41,6 @@
         </UCarousel>
       </div>
     </UContainer>
-    <img
-      src="/arcs/arc1.png"
-      class="absolute -left-[150px] top-[35px] z-10 w-[190px] rotate-[150] lg:-left-[300px] lg:-top-[70px] lg:w-[384px]"
-    />
-    <img
-      src="/arcs/arc1.png"
-      class="absolute -right-[150px] bottom-[35px] z-10 w-[190px] rotate-[150] lg:-bottom-[70px] lg:-right-[300px] lg:w-[384px]"
-    />
   </div>
 </template>
 

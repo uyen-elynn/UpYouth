@@ -29,43 +29,4 @@ defineProps<SocialLink>();
   </UButton>
 </template>
 
-<style>
-.button-fill {
-  position: relative;
-  overflow: hidden;
-  color: black; 
-}
 
-.button-fill::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background-color: #1d4ed8; 
-  z-index: 0;
-  transition: all 0.5s ease-out;
-}
-
-.button-fill:hover::before {
-  left: 0;
-}
-
-.button-fill:hover {
-  color: white;
-}
-
-.button-fill > * {
-  position: relative;
-  z-index: 1;
-}
-
-.icon-transition {
-  transition: color 0.5s ease-out; 
-}
-
-.button-fill:hover .icon-transition {
-  color: white; 
-}
-</style>

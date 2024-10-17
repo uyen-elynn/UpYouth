@@ -1,5 +1,4 @@
 <template>
-  <div ref="templateRef" :class="{ 'scale-up': isVisible, 'scale-down': !isVisible }">
     <UContainer>
       <div class="flex flex-col items-center justify-center gap-2 md:gap-4">
         <CommonBrandText prefix="We are backed by" label="the best" color="blue-700"
@@ -29,19 +28,10 @@
         </Carousel>
       </div>
     </UContainer>
-  </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { useIntersectionObserver } from '~/assets/TS/useIntersectionObserver';
-
-const templateRef = ref(null);
-const isVisible = ref(false);
-
-useIntersectionObserver(templateRef, (visible) => {
-  isVisible.value = visible;
-});
 
 const items = [
   '/sponsors/Advertising Vietnam.svg',

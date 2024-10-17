@@ -1,5 +1,4 @@
 <template>
-  <div ref="templateRef" :class="{ 'scale-up': isVisible, 'scale-down': !isVisible }">
     <div class="bg-primary-700 relative mx-4 my-8 overflow-hidden rounded-3xl p-8 lg:my-16 lg:p-16">
       <UContainer class="mb-8 lg:mb-16">
         <div class="flex flex-col items-center justify-center gap-2 md:gap-4">
@@ -23,19 +22,10 @@
       <img src="/arcs/arc1.png"
         class="absolute -right-[150px] bottom-[35px] z-10 w-[190px] rotate-[150] lg:-bottom-[70px] lg:-right-[300px] lg:w-[384px]" />
     </div>
-  </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { useIntersectionObserver } from '~/assets/TS/useIntersectionObserver';
-
-const templateRef = ref(null);
-const isVisible = ref(false);
-
-useIntersectionObserver(templateRef, (visible) => {
-  isVisible.value = visible;
-});
 
 const specialList = ref([
   {
@@ -76,14 +66,3 @@ const specialList = ref([
 ])
 </script>
 
-<style scoped>
-.scale-up {
-  transform: scale(1);
-  transition: transform 0.6s ease-in-out;
-}
-
-.scale-down {
-  transform: scale(0.98);
-  transition: transform 0.6s ease-in-out;
-}
-</style>

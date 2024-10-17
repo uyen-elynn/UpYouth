@@ -1,6 +1,5 @@
 <template>
-    <div
-        class="i bg-white shadow-md rounded-md p-8 flex flex-row items-center gap-8 w-full">
+    <div class="i bg-white shadow-md rounded-md p-8 flex flex-row items-center gap-8 w-full">
         <img :src="member?.image" alt="Member Photo" class="w-40 h-40 object-cover rounded-md" />
         <div class="flex-1">
             <h3 class="text-2xl font-bold text-blue-700">{{ member?.name }}</h3>
@@ -18,11 +17,11 @@
                 </div>
                 <div v-if="activeTab === 'accomplishments'" class="mt-4">
                     <ul class="mt-2 text-gray-700">
-                        <li v-for="(achievement, i) in member?.accomplishments" :key="i" class="mb-1">{{ achievement }}
-                        </li>
+                        <li v-for="(achievement, i) in member?.accomplishments" :key="i" class="mb-1"
+                            v-html="achievement"></li>
                     </ul>
                 </div>
-                <div v-else-if="activeTab === 'story'" class="mt-4 text-gray-700">
+                <div v-else-if="activeTab === 'story'" class="mt-4 text-gray-700 text-justify">
                     <p>{{ member?.storyContent }}</p>
                 </div>
             </div>
@@ -39,14 +38,3 @@ const props = defineProps({
     activeTab: String,
 });
 </script>
-
-<style scoped>
-h4 {
-    transition: color 0.3s ease;
-}
-
-h4:hover {
-    color: #1d4ed8;
-}
-
-</style>
