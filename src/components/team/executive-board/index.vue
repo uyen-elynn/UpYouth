@@ -5,17 +5,15 @@
     </div>
 
     <div class="mt-8 grid gap-12">
-      <Item v-for="(member, index) in executiveBoardMembers" :key="index" :member="member"
-        :active-tab="activeTab[index]" @tab-click="(tab) => handleTabClick(index, tab)" />
+      <Item v-for="(member, item) in executiveBoardMembers" :key="item" :member="member"
+        :active-tab="activeTab[item]" @tab-click="(tab) => handleTabClick(item, tab)" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
 import Item from './item.vue';
 
-// Define the executive board members
 const executiveBoardMembers = ref([
   {
     name: 'Dao Phan Anh',
@@ -60,9 +58,8 @@ const executiveBoardMembers = ref([
 
 const activeTab = ref(Array(executiveBoardMembers.value.length).fill('accomplishments'));
 
-// Function to handle tab clicks
-const handleTabClick = (index: number, tab: string) => {
-  activeTab.value[index] = tab;
+const handleTabClick = (item: number, tab: string) => {
+  activeTab.value[item] = tab;
 };
 </script>
 

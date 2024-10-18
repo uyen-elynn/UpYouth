@@ -31,7 +31,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
 
 const items = [
   '/sponsors/Advertising Vietnam.svg',

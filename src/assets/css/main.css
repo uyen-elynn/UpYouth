@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+  .button-fill {
+    @apply relative overflow-hidden text-black transition duration-200 ease-in-out;
+  }
+  
+  .button-fill::before {
+    content: "";
+    @apply absolute top-0 left-0 w-full h-full bg-blue-800; /* Sử dụng màu mong muốn cho hiệu ứng */
+    left: -100%;
+    transition: all 0.5s ease-out;
+    z-index: 0;
+  }
+
+  .button-fill:hover::before {
+    left: 0;
+  }
+
+  .button-fill:hover {
+    @apply text-white;
+  }
+
+  /* Ensuring the button content stays above the background */
+  .button-fill > * {
+    @apply relative z-10;
+  }
+}

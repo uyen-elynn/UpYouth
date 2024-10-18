@@ -1,34 +1,44 @@
 <template>
   <div class="mt-16 px-20 py-10 gap-10">
     <div class="text-center w-full inline-block px-6 py-3 rounded-md ">
-        <CommonBrandText label="Our Core Values" color="blue-700"
-          class="text-center text-xl font-bold md:text-6xl" background slide>
-        </CommonBrandText>
-        <p class="text-center text-xs md:text-base">
-          Our culture is <strong class="text-blue-700">can-do mindset</strong> - Even though what we do is challenging, we are able to achieve all we want with <strong class="text-blue-700">03 working principles.</strong>
-        </p>
-      </div>
+      <CommonBrandText
+        label="Our Core Values"
+        color="blue-700"
+        class="text-center text-xl font-bold md:text-6xl"
+        background
+        slide
+      >
+      </CommonBrandText>
+      <p class="text-center text-xs md:text-base">
+        Our culture is
+        <strong class="text-blue-700">can-do mindset</strong> - Even though
+        what we do is challenging, we are able to achieve all we want with
+        <strong class="text-blue-700">03 working principles.</strong>
+      </p>
+    </div>
 
     <div class="mt-8">
       <div class="flex justify-evenly items-center gap-4 border-b border-gray-200 pb-4 px-12">
         <button
-          v-for="(tab, index) in coreValuesTabs"
-          :key="index"
-          @click="activeTab = index"
-          :class="['text-xl font-semibold uppercase py-2 px-4 transition-all duration-300 ease-in-out hover:text-blue-700', activeTab === index ? 'text-blue-700 border-b-4 border-orange-500' : 'text-gray-500 border-b-2 border-transparent']"
+          v-for="(tab, item) in coreValuesTabs"
+          :key="item"
+          @click="activeTab = item"
+          class="text-xl font-semibold uppercase py-2 px-4 transition-all duration-300 ease-in-out hover:text-blue-700"
+          :class="activeTab === item ? 'text-blue-700 border-b-4 border-orange-500' : 'text-gray-500 border-b-2 border-transparent'"
         >
           {{ tab.label }}
         </button>
       </div>
 
-      <div class="mt-8 text-2xl text-gray-700 text-justify leading-relaxed" v-html="coreValuesTabs[activeTab].content"></div>
+      <div
+        class="mt-8 text-2xl text-gray-700 text-justify leading-relaxed"
+        v-html="coreValuesTabs[activeTab].content"
+      ></div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-
 const activeTab = ref(0);
 const coreValuesTabs = ref([
   {

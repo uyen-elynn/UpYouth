@@ -17,7 +17,7 @@
       <h3 class="text-2xl font-bold text-blue-700 text-center mb-2">Board Advisors</h3>
       <p class="text-center text-sm text-black mb-8">*Non-exhaustive list</p>
       <div class="flex flex-wrap justify-center gap-32">
-        <div v-for="(advisor, index) in advisors" :key="index" class="flex flex-col items-center">
+        <div v-for="(advisor, item) in advisors" :key="item" class="flex flex-col items-center">
           <img :src="advisor.image" alt="Advisor Photo" class="w-40 h-40 object-cover rounded-full mb-4" />
           <h4 class="text-lg font-bold text-blue-500 transition-colors duration-300 ease-in-out hover:text-blue-700">{{ advisor.name }}</h4>
           <p class="text-md text-gray-500 font-semibold text-center" v-html="advisor.position"></p>
@@ -28,8 +28,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-
 const chairs = ref([
   {
     name: 'Ms. Thanh Hoang',
