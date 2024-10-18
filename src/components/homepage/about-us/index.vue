@@ -85,7 +85,7 @@ const aboutUsList = ref<AboutUs[]>([
     content:
       'A startup program helping 40+ startups gain over 4500+ users combined and raise money from top VCs like Antler and Iterative, through a package of AWS credits, recruitment support, and close mentorship from 50+ industry leaders and successful founders.',
     link: 'Visit TechYouth Incubator',
-    url: 'https://www.facebook.com/upyouth.org/posts/pfbid02jk4vu2thVaGkxpMNQdzMnf3MKEbTznbMmtTvxkj9QSgCmAXw29myrQcPXXV5iv4Nl'
+    url: 'https://docs.google.com/presentation/d/1aT6MXV_LUXPcURcq6Bmm5YOUD2lHDElhQO5wqqd34kw/edit?usp=sharing'
   },
   {
     id: 2,
@@ -122,7 +122,7 @@ const aboutUsList = ref<AboutUs[]>([
     content:
       'A 2-day hackathon with HackMIT as a technical advisor, offering a 300-million-VND prize for future entrepreneurs to solve real social challenges by Elsa, Timo, VinaCapital Ventures, and more.',
     link: 'Visit HackYouth',
-    url: 'https://www.facebook.com/upyouth.org/posts/pfbid02T1C1mKJGHdApjynpEJ1bMd7Zpa1cN2UFAXzJJNwV8eunvmU9aF2b9ACJmu6xTHEjl'
+    url: 'https://docs.google.com/presentation/d/1U0l-ruKMciXCLRuP999u4-FP8kaBk3wUSKzMyw9zxwI/edit?usp=sharing'
   }
 ]);
 </script>
